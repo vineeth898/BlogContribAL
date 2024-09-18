@@ -118,6 +118,163 @@
         section ul{
             margin-left: 2em;
         }
+        .alignImage {
+            display: flex;
+            flex-direction: row; /* Default for laptops and larger screens */
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        img{
+            height: 15em; 
+            border-radius: 2em;
+        }
+        /* Section headings styling */
+        section h2 {
+            font-size: 1.8em;
+            color: #ffffff; /* Vibrant color */
+            margin-top: 1.5em;
+            border-bottom: 2px solid #ffffff; /* Underline effect */
+            padding-bottom: 0.5em;
+        }
+
+        /* Part section styling */
+        .part-section {
+            margin-top: 1.5em;
+            background-color: #222;
+            border-radius: 8px;
+            padding: 1em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Image styling */
+        .part-section img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1em;
+        }
+
+        /* Styling the buttons */
+        .part-section .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: black;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .part-section .btn:hover {
+            background-color: #ffffff;
+        }
+
+        /* List styling */
+        .part-section ul {
+            margin-left: 1.5em;
+            color: #ddd;
+        }
+
+        .part-section ul li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Process steps styling */
+        .part-section ol {
+            margin-left: 2em;
+            color: #ccc;
+        }
+
+        .part-section ol li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Video embed styling */
+        .part-section iframe {
+            width: 100%;
+            height: 315px;
+            margin-top: 1em;
+            border-radius: 8px;
+        }
+
+        /* Media query for phones (typically screens up to 768px wide) */
+        @media (max-width: 768px) {
+            .alignImage {
+                flex-direction: column;
+            }
+            img{
+                height: auto;
+                width: 90%;
+            }
+            #mainIMG{
+                width: 90%;
+            }
+
+        }
+
+        @media screen and (min-width:768px){
+            body{
+                font-size: 1.2rem;
+            }
+            #mainIMG{
+                height: auto;
+                width: 50%;
+            }
+        }
+        /* General styling for grouped sections */
+        .grouped-section {
+            margin-top: 2em;
+            background-color: #2a2a2a; /* Darker shade to differentiate */
+            border-radius: 8px;
+            padding: 2em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Differentiating Introduction, Overview, Shortcomings, and Conclusion */
+        #introduction {
+            background-color: #383838; /* Unique color for Introduction */
+        }
+
+        #overview {
+            background-color: #383838; /* Unique color for Overview */
+        }
+
+        #shortcomings {
+            background-color: #383838; /* Unique color for Shortcomings */
+        }
+
+        #conclusion {
+            background-color: #383838; /* Unique color for Conclusion */
+        }
+        #construction{
+            
+            background-color: #383838;
+            width:105%;
+            margin-left: -2.5%;
+            margin-top: 5%;
+        }
+
+        /* Typography and spacing adjustments */
+        .grouped-section h1 {
+            color: #ffffff;
+            font-size: 2.2em;
+            margin-bottom: 1em;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 0.5em;
+        }
+
+        .grouped-section p, .grouped-section ul {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .grouped-section ul {
+            list-style-type: disc;
+            margin-left: 2em;
+        }
+
+
     </style>
 </head>
 <body>
@@ -136,42 +293,53 @@
 
 <!-- Page Content -->
 <div class="container">
-    <h1>Filament Recycler Under 100 Dollars</h1>
-    <p>August 29, 2024 | By Augmented Labs</p>
+    <div class="alignImage">
+        <div class="heading-container">
+            <h1>Filament Recycler Under 100 Dollars</h1>
 
-    <nav>
-        <ul>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#overview">Overall Overview</a></li>
-            <li><a href="#shortcomings">Shortcomings</a></li>
-            <li><a href="#construction">Design and Construction</a></li>
-            <li><a href="#conclusion">Conclusion</a></li>
-        </ul>
-    </nav>
+            <p>August 29, 2024 | By Augmented Labs</p>
 
-    <section id="introduction">
+            <nav>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#overview">Overall Overview</a></li>
+                    <li><a href="#shortcomings">Shortcomings</a></li>
+                    <li><a href="#construction">Design and Construction</a></li>
+                    <li><a href="#conclusion">Conclusion</a></li>
+                </ul>
+            </nav>
+        </div>
+        <img src="imaes/filamentWaste.jpg" alt="Filament Recycler Icon" id="mainIMG">
+    </div>
+
+    <section id="introduction" class="grouped-section">
         <h1>Introduction</h1>
+        <div class="alignImage">
+            <img src="imaes/filamentWaste.jpg" alt="sample image" >
         <p>
             3D printing enthusiasts often face the issue of filament waste, which not only impacts the environment but also adds 
-            to the cost of 3D printing. Commertially available filament recyclers are very expensive, which make the premium for
-            sustinability uneconomical, which is resulting in the wastage of a lot of potentially usefull material going into landfills.
-            <br><br>Sustinability being one of the main mottos of <i>Augmented Labs</i> we attempted to develop a recycler for 3d printer just under 100$ (we came close)
+            to the cost of 3D printing. Commertially available filament recyclers are very expensive, which inturn makes the premium for
+            sustinability quite high, which is resulting in the wastage of a lot of potentially usefull material going into landfills.
+            <br><br>Sustinability being one of the main mottos of <b> <i>Augmented Labs</i></b> we attempted to develop a recycler for 3d printer just under 100$ (we came close)
         </p>
+        </div>
     </section>
-    <section id="overview">
+    <section id="overview" class="grouped-section">
         <h1>Overall Overview</h1>
-        <p>
+        <p >
             The filament recycler is composed of a few key parts: 
             <ul>
                 <li>Shredder: Breaks Large pieces of materials into smaller chunks</li>
                 <li>Grinder: Further converts shredded chunks into finer grains</li>
                 <li>Moulder: Heats and shapes grins into the standard 1.75mm diameter filament tube</li>
                 <li>Spooler: Wraps the filament onto a spool</li>
+                <li>Controll Hub: User interface to controll the system </li>
             </ul>
+            <img src="imaes/filamentWaste.jpg" alt="Insert Process image here" style="margin-left:2em;">
         </p>
     </section>
 
-    <section id="shortcomings">
+    <section id="shortcomings" class="grouped-section">
         <h1>Shortcomings</h1>
         <p>
             All the above mentioned parts were developed with multiple inspirations, aqcuiring the parts needed to build them, and cost in mind. We managed to get the Shredder, Grinder, 
@@ -187,22 +355,187 @@
             <li><a href="#grinder">Grinder:</a></li>
             <li><a href="#moulder">Moulder:</a></li>
             <li><a href="#spooler">Spooler:</a></li>
-        </ul>
-        <section id="shredder">
+            <li><a href="#controllHub">Controll Hub:</a></li>
+                </ul><!-- Shredder Section -->
+        <section id="shredder" class="part-section">
             <h2>Shredder</h2>
+
+            <!-- Outcome Image -->
+            <img src="images/shredder_outcome.jpg" alt="Shredder Outcome Image">
+
+            <!-- Affiliate Links to Buy Parts -->
+            <h3>Parts Needed:</h3>
+            <ul>
+                <li><a href="https://affiliate-link.com/shredder-part-1" target="_blank">Shredder Blade</a></li>
+                <li><a href="https://affiliate-link.com/shredder-part-2" target="_blank">Motor</a></li>
+                <li><a href="https://affiliate-link.com/shredder-part-3" target="_blank">Power Supply</a></li>
+            </ul>
+
+            <!-- Links to 3D Files -->
+            <h3>Download 3D Files:</h3>
+            <ul>
+                <li><a href="https://3d-files.com/shredder-part-1" target="_blank">Shredder Housing (3D File)</a></li>
+                <li><a href="https://3d-files.com/shredder-part-2" target="_blank">Blade Mount (3D File)</a></li>
+            </ul>
+
+            <!-- Process to Build -->
+            <h3>Process to Build:</h3>
+            <ol>
+                <li>Print the housing and blade mount using the provided 3D files.</li>
+                <li>Assemble the shredder blade and connect it to the motor.</li>
+                <li>Attach the motor to the printed housing securely.</li>
+                <li>Connect the power supply and test the shredder for smooth operation.</li>
+            </ol>
+
+            <!-- Outcome Video -->
+            <h3>Outcome Video:</h3>
+            <iframe src="https://www.youtube.com/embed/sample-video-id" title="Shredder Outcome Video"></iframe>
         </section>
-        <section id="grinder">
+
+        <!-- Grinder Section -->
+        <section id="grinder" class="part-section">
             <h2>Grinder</h2>
+
+            <!-- Outcome Image -->
+            <img src="images/grinder_outcome.jpg" alt="Grinder Outcome Image">
+
+            <!-- Affiliate Links to Buy Parts -->
+            <h3>Parts Needed:</h3>
+            <ul>
+                <li><a href="https://affiliate-link.com/grinder-part-1" target="_blank">Grinding Disc</a></li>
+                <li><a href="https://affiliate-link.com/grinder-part-2" target="_blank">Motor</a></li>
+                <li><a href="https://affiliate-link.com/grinder-part-3" target="_blank">Power Supply</a></li>
+            </ul>
+
+            <!-- Links to 3D Files -->
+            <h3>Download 3D Files:</h3>
+            <ul>
+                <li><a href="https://3d-files.com/grinder-part-1" target="_blank">Grinder Housing (3D File)</a></li>
+                <li><a href="https://3d-files.com/grinder-part-2" target="_blank">Disc Mount (3D File)</a></li>
+            </ul>
+
+            <!-- Process to Build -->
+            <h3>Process to Build:</h3>
+            <ol>
+                <li>Print the grinder housing and disc mount using the provided 3D files.</li>
+                <li>Mount the grinding disc onto the motor and secure it with screws.</li>
+                <li>Place the motor inside the printed housing.</li>
+                <li>Connect the power supply and test the grinder for smooth operation.</li>
+            </ol>
+
+            <!-- Outcome Video -->
+            <h3>Outcome Video:</h3>
+            <iframe src="https://www.youtube.com/embed/sample-video-id" title="Grinder Outcome Video"></iframe>
         </section>
-        <section id="moulder">
+        <!-- Grinder Section -->
+        <section id="moulder" class="part-section">
             <h2>Moulder</h2>
+
+            <!-- Outcome Image -->
+            <img src="images/grinder_outcome.jpg" alt="Grinder Outcome Image">
+
+            <!-- Affiliate Links to Buy Parts -->
+            <h3>Parts Needed:</h3>
+            <ul>
+                <li><a href="https://affiliate-link.com/grinder-part-1" target="_blank">Grinding Disc</a></li>
+                <li><a href="https://affiliate-link.com/grinder-part-2" target="_blank">Motor</a></li>
+                <li><a href="https://affiliate-link.com/grinder-part-3" target="_blank">Power Supply</a></li>
+            </ul>
+
+            <!-- Links to 3D Files -->
+            <h3>Download 3D Files:</h3>
+            <ul>
+                <li><a href="https://3d-files.com/grinder-part-1" target="_blank">Grinder Housing (3D File)</a></li>
+                <li><a href="https://3d-files.com/grinder-part-2" target="_blank">Disc Mount (3D File)</a></li>
+            </ul>
+
+            <!-- Process to Build -->
+            <h3>Process to Build:</h3>
+            <ol>
+                <li>Print the grinder housing and disc mount using the provided 3D files.</li>
+                <li>Mount the grinding disc onto the motor and secure it with screws.</li>
+                <li>Place the motor inside the printed housing.</li>
+                <li>Connect the power supply and test the grinder for smooth operation.</li>
+            </ol>
+
+            <!-- Outcome Video -->
+            <h3>Outcome Video:</h3>
+            <iframe src="https://www.youtube.com/embed/sample-video-id" title="Grinder Outcome Video"></iframe>
         </section>
-        <section id="spooler">
+        <!-- Grinder Section -->
+        <section id="spooler" class="part-section">
             <h2>Spooler</h2>
+
+            <!-- Outcome Image -->
+            <img src="images/grinder_outcome.jpg" alt="Grinder Outcome Image">
+
+            <!-- Affiliate Links to Buy Parts -->
+            <h3>Parts Needed:</h3>
+            <ul>
+                <li><a href="https://affiliate-link.com/grinder-part-1" target="_blank">Grinding Disc</a></li>
+                <li><a href="https://affiliate-link.com/grinder-part-2" target="_blank">Motor</a></li>
+                <li><a href="https://affiliate-link.com/grinder-part-3" target="_blank">Power Supply</a></li>
+            </ul>
+
+            <!-- Links to 3D Files -->
+            <h3>Download 3D Files:</h3>
+            <ul>
+                <li><a href="https://3d-files.com/grinder-part-1" target="_blank">Grinder Housing (3D File)</a></li>
+                <li><a href="https://3d-files.com/grinder-part-2" target="_blank">Disc Mount (3D File)</a></li>
+            </ul>
+
+            <!-- Process to Build -->
+            <h3>Process to Build:</h3>
+            <ol>
+                <li>Print the grinder housing and disc mount using the provided 3D files.</li>
+                <li>Mount the grinding disc onto the motor and secure it with screws.</li>
+                <li>Place the motor inside the printed housing.</li>
+                <li>Connect the power supply and test the grinder for smooth operation.</li>
+            </ol>
+
+            <!-- Outcome Video -->
+            <h3>Outcome Video:</h3>
+            <iframe src="https://www.youtube.com/embed/sample-video-id" title="Grinder Outcome Video"></iframe>
         </section>
+        <section id="controllHub" class="part-section">
+            <h2>Controll Hub</h2>
+
+            <!-- Outcome Image -->
+            <img src="images/grinder_outcome.jpg" alt="Grinder Outcome Image">
+
+            <!-- Affiliate Links to Buy Parts -->
+            <h3>Parts Needed:</h3>
+            <ul>
+                <li><a href="https://affiliate-link.com/grinder-part-1" target="_blank">Grinding Disc</a></li>
+                <li><a href="https://affiliate-link.com/grinder-part-2" target="_blank">Motor</a></li>
+                <li><a href="https://affiliate-link.com/grinder-part-3" target="_blank">Power Supply</a></li>
+            </ul>
+
+            <!-- Links to 3D Files -->
+            <h3>Download 3D Files:</h3>
+            <ul>
+                <li><a href="https://3d-files.com/grinder-part-1" target="_blank">Grinder Housing (3D File)</a></li>
+                <li><a href="https://3d-files.com/grinder-part-2" target="_blank">Disc Mount (3D File)</a></li>
+            </ul>
+
+            <!-- Process to Build -->
+            <h3>Process to Build:</h3>
+            <ol>
+                <li>Print the grinder housing and disc mount using the provided 3D files.</li>
+                <li>Mount the grinding disc onto the motor and secure it with screws.</li>
+                <li>Place the motor inside the printed housing.</li>
+                <li>Connect the power supply and test the grinder for smooth operation.</li>
+            </ol>
+
+            <!-- Outcome Video -->
+            <h3>Outcome Video:</h3>
+            <iframe src="https://www.youtube.com/embed/sample-video-id" title="Grinder Outcome Video"></iframe>
+        </section>
+
+    
     </section>
 
-    <section id="conclusion">
+    <section id="conclusion" class="grouped-section">
         <h1>Conclusion</h1>
         <p>
             The working process of the filament recycler is straightforward. The waste filament is first shredded into small pieces. These 
