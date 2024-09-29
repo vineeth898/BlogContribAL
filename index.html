@@ -529,39 +529,57 @@
 
 
         <section id="controllHub" class="part-section">
-            <h2>Controll Hub</h2>
-            <p class="desc"> method to melt and extrude the filament.</p>
+            <h2>Control Hub</h2>
+            <p class="desc"> This is the user interface through which users can set certain parameters.</p>
             
             <!-- Outcome Image -->
-            <img src="images/grinder_outcome.jpg" alt="Grinder Outcome Image">
+            <img src="images/grinder_outcome.jpg" alt="Contro Hub Outcome Image">
 
             <!-- Affiliate Links to Buy Parts -->
-            <h3>Parts Needed:</h3>
+            <h3>Outlook</h3>
             <ul>
-                <li><a href="https://affiliate-link.com/grinder-part-1" target="_blank">Grinding Disc</a></li>
-                <li><a href="https://affiliate-link.com/grinder-part-2" target="_blank">Motor</a></li>
-                <li><a href="https://affiliate-link.com/grinder-part-3" target="_blank">Power Supply</a></li>
+                <li><h5>The control hub consists of 3 main menu:</h5></li>
+                <li>Set Temperature (filament dependant)</li>
+                <li>Set Speed       (of auger and spooler)</li>
+                <li>BLDC            (control motor and base) </li>
             </ul>
 
             <!-- Links to 3D Files -->
-            <h3>Download 3D Files:</h3>
-            <ul>
-                <li><a href="https://3d-files.com/grinder-part-1" target="_blank">Grinder Housing (3D File)</a></li>
-                <li><a href="https://3d-files.com/grinder-part-2" target="_blank">Disc Mount (3D File)</a></li>
-            </ul>
-
-            <!-- Process to Build -->
-            <h3>Process to Build:</h3>
+            <h3>Work flow and Control mechanism</h3>
             <ol>
-                <li>Print the grinder housing and disc mount using the provided 3D files.</li>
-                <li>Mount the grinding disc onto the motor and secure it with screws.</li>
-                <li>Place the motor inside the printed housing.</li>
-                <li>Connect the power supply and test the grinder for smooth operation.</li>
+                <li>Shredded 3D waste is taken to the grinder where the small pellets are further ground into very fine pieces. The motor used in the grinder is a BLDC motor, which is controlled by an H-bridge. Users have the privilege of setting the motor speed,turning on and turning off the motor using the menu.
+                </li>
+                <li>After the grinding process is completed, the grinder base opens when the user selects the "Grinder Base Open" option in the menu. The plastic is then transferred to the hopper below.
+                </li>
+                <li>The plastic collected in the hopper is then transported to the hot-end with the help of an auger.
+                </li>
+                <li>The auger is rotated by a DC motor, which is controlled by an H-bridge. The speed of the auger is maintained at a fixed angular velocity(set by user) by implementing a PID algorithm.
+                </li>
+                <li>The hot-end is heated using three heating elements with progressively increasing temperatures. The temperature of each heating element is accurately controlled by using the PID algorithm. Users are allowed to choose the filament(PLA,ABS,PETG) in the SET TEMP’ option of the menu, thus selecting the corresponding melting temperature.If the user wishes to set the temperature manually,there’s a provision to do so.
+                </li>
+                <li>The extruded filament after being cooled, is spooled using a spooler, which ensures that the filament is spread evenly onto the spool. The speed of the spooler varies with the velocity of the extruded filament from the hot end. Additionally, the spooler's speed adjusts in response to increasing load and the radius of the filament being spooled.
+                </li>
             </ol>
 
-            <!-- Outcome Video -->
-            <h3>Outcome Video:</h3>
-            <iframe src="https://www.youtube.com/embed/sample-video-id" title="Grinder Outcome Video"></iframe>
+            <!-- Process to Build -->
+            <h3>Control algorithm</h3>
+            
+                <ul><li>PID Algorithm: For controlling temperature of the hot end and the speed of auger
+                    and spooler.It is a control loop mechanism that works by continuously calculating an error value as
+                    the difference between a desired setpoint and a measured process variable.The PID
+                    algorithm applies correction based on three parameters:</li></ul>
+                <ol>
+                <li>Proportional (P): This term produces an output value proportional to the current error.
+                    The larger the error, the larger the proportional response.</li>
+                <li>Integral (I): This term accounts for past errors. It integrates the error over time, ensuring
+                    that any accumulated error is corrected by adjusting the process control inputs.</li>
+                <li>Derivative (D): This term predicts future errors based on the current rate of change. It
+                    helps to dampen the system response and improve stability.</li>
+            </ol>
+                    
+            
+
+            
         </section>
 
     
@@ -569,10 +587,8 @@
 
     <section id="conclusion" class="grouped-section">
         <h1>Conclusion</h1>
-        <p>
-            The working process of the filament recycler is straightforward. The waste filament is first shredded into small pieces. These 
-            pieces are then fed into the extruder, where they are heated and extruded into a new filament. Finally, the filament is wound 
-            onto a spool for reuse. 
+        <p>In conclusion, our 3D printer filament recycler offers an eco-friendly and cost-effective solution for makers and 3D printing enthusiasts. This way we attempted to reduce plastic waste and contribute to a more sustainable future for 3D printing. Our device is designed with simplicity and efficiency in mind. With this innovation, we hope to inspire others to embrace sustainability in their creative processes.
+            Feel free to tweak it based on your specific product features! 
         </p>
     </section>
 
