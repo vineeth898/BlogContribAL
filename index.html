@@ -276,6 +276,67 @@
         .desc{
             font-size: 0.9em;
         }
+        .Views {
+    display: flex;
+    flex-wrap: wrap; /* Allows images to wrap to the next row if necessary */
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto; /* Adjust height based on content */
+    min-height: 40vh;
+    }
+
+    .Views img {
+        height: 30vh; /* Adjusts image height dynamically */
+        max-height: 350px; /* Prevents images from getting too large */
+        object-fit: cover; /* Ensures images retain aspect ratio */
+        margin: 10px; /* Adds space between images */
+    }
+
+    /* Additional styles for responsiveness */
+    @media (max-width: 768px) {
+        .Views img {
+            height: 25vh;
+            max-height: 300px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .Views img {
+            height: 20vh;
+            max-height: 250px;
+        }
+    }
+    /* CSS Styles */
+    .video-container {
+        width: 100%; /* Container width adapts to parent */
+        display: flex; /* Flexbox layout for centering */
+        justify-content: center; /* Centers the video horizontally */
+        align-items: center; /* Centers the video vertically */
+        margin: 20px 0; /* Adds some margin above and below */
+    }
+
+    .dynamic-video {
+        width: 80%; /* Default width of the video */
+        max-width: 1000px; /* Prevents video from growing too large */
+        height: auto; /* Keeps the aspect ratio */
+        border: 2px solid #ccc; /* Adds a border for visual appeal */
+        border-radius: 10px; /* Slight rounding for aesthetics */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds subtle shadow */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .dynamic-video {
+            width: 90%; /* Wider width on smaller screens */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .dynamic-video {
+            width: 100%; /* Full width for very small screens */
+        }
+    }
 
     </style>
 </head>
@@ -311,13 +372,13 @@
                 </ul>
             </nav>
         </div>
-        <img src="imaes/filamentWaste.jpg" alt="Filament Recycler Icon" id="mainIMG">
+        <img src="images/Overall.jpg" alt="Filament Recycler Icon" id="mainIMG">
     </div>
 
     <section id="introduction" class="grouped-section">
         <h1>Introduction</h1>
         <div class="alignImage">
-            <img src="imaes/filamentWaste.jpg" alt="sample image" >
+            <img src="images/filamentWaste.jpg" alt="sample image" >
         <p>
             3D printing enthusiasts often face the issue of filament waste, which not only impacts the environment but also adds 
             to the cost of 3D printing. Commertially available filament recyclers are very expensive, which inturn makes the premium for
@@ -337,7 +398,7 @@
                 <li>Spooler: Wraps the filament onto a spool</li>
                 <li>Controll Hub: User interface to controll the system </li>
             </ul>
-            <img src="imaes/filamentWaste.jpg" alt="Insert Process image here" style="margin-left:2em;">
+            <img src="images/steps.png" alt="Insert Process image here" style="margin-left:2em;">
         </p>
     </section>
 
@@ -362,10 +423,15 @@
         <!-- Shredder Section -->
         <section id="shredder" class="part-section">
             <h2>Shredder</h2>
-            <p class="desc">Shredding is the first step in converting waste into reusable filament by breaking down large materials like support structures into smaller, manageable pieces for further processing.</p>
+            <p class="desc" >Shredding is the first step in converting waste into reusable filament by breaking down large materials like support structures into smaller, manageable pieces for further processing.</p>
             
             <!-- Outcome Image -->
-            <img src="images/shredder_outcome.jpg" alt="Shredder Outcome Image">
+            <div class="Views">
+                <img src="images/shredderTop.jpg" alt="Shredder Outcome Image">
+                <img src="images/shredderIsometric.jpg" alt="Shredder Outcome Image">
+                <img src="images/shredderFront.jpg" alt="Shredder Outcome Image">
+            </div>
+            
 
             <!-- Affiliate Links to Buy Parts -->
             <h3>Parts Needed:</h3>
@@ -396,7 +462,12 @@
 
             <!-- Outcome Video -->
             <h3>Outcome Video:</h3>
-            <iframe src="https://www.youtube.com/embed/sample-video-id" title="Shredder Outcome Video"></iframe>
+            <div class="video-container">
+                <video class="dynamic-video" controls>
+                    <source src="images/3dprinting.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </section>
 
         <!-- Grinder Section -->
@@ -405,8 +476,11 @@
             <p class="desc">A grinder unit is required in the Filament recycling unit to get uniform-sized pellets like the ones we use while making fresh filament. This increases the quality of filament we receive in the end.</p>
             
             <!-- Outcome Image -->
-            <img src="images/grinder_outcome.jpg" alt="Grinder Outcome Image">
-        
+            <div class="Views">
+                <img src="images/grrinderIsometricNoCap.jpg" alt="Shredder Outcome Image">
+                <img src="images/grinderIsometric.jpg" alt="Shredder Outcome Image">
+                <img src="images/grinderfrontView.jpg" alt="Shredder Outcome Image">
+            </div>
             <!-- Affiliate Links to Buy Parts -->
             <h3>Parts Needed:</h3>
             <ul><li>Mixer grinder blade (as shown in the image)</li>
@@ -444,7 +518,12 @@
         
             <!-- Outcome Video -->
             <h3>Outcome Video:</h3>
-            <iframe src="https://www.youtube.com/embed/sample-video-id" title="Grinder Outcome Video"></iframe>
+            <div class="video-container">
+                <video class="dynamic-video" controls>
+                    <source src="images/3dprinting.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </section>
         
         <!-- Grinder Section -->
@@ -453,7 +532,10 @@
         
             <!-- Description -->
             <p class="desc">Heating and Filament making: This is the main component of recycling filament waste. Even though our model did not work, we would like to mention how we tried to achieve our goal. Out of all the 4 parts of our project, this was the only part where we were disappointed as we couldn't find an alternate/cost-effective method to melt and extrude the filament.</p>
-        
+            <div class="Views">
+                <img src="images/moulderIsometricNoCap.jpg" alt="Shredder Outcome Image">
+                <img src="images/moulderIsomteric.jpg" alt="Shredder Outcome Image">
+            </div>
             <!-- Parts Needed -->
             <h3>Parts Needed:</h3>
             <ul>
@@ -485,14 +567,24 @@
         
             <!-- Outcome Video -->
             <h3>Outcome Video:</h3>
-            <iframe src="https://www.youtube.com/embed/sample-video-id" title="Moulder Outcome Video"></iframe>
+            <div class="video-container">
+                <video class="dynamic-video" controls>
+                    <source src="images/3dprinting.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </section>
         
-        <!-- Grinder Section -->
-        <section id="spooler" class="part-section">
+        <section id="spooler" class="part-section"> 
             <h2>Spooler</h2>
             <p class="desc">After the filament is extruded from the moulder, the Spooler spools it around a spool. Spooler can even controll the diameter of the filament. </p>
         
+            <div class="Views">
+                <img src="images/spoolerIsometric.jpg" alt="Shredder Outcome Image">
+                <img src="images/spoolerSide.jpg" alt="Shredder Outcome Image">
+                <img src="images/spoolerFront.jpg" alt="Shredder Outcome Image">
+            </div>
+           
             <!-- Outcome Image -->
             <img src="images/grinder_outcome.jpg" alt="Grinder Outcome Image">
 
@@ -516,25 +608,34 @@
             <!-- Process to Build -->
             <h3>Process to Build:</h3>
             <ol>
-                <li>Print the grinder housing and disc mount using the provided 3D files.</li>
-                <li>Mount the grinding disc onto the motor and secure it with screws.</li>
-                <li>Place the motor inside the printed housing.</li>
-                <li>Connect the power supply and test the grinder for smooth operation.</li>
+                <li>Print all the parts mentioned above</li>
+                <li>Get MDF and Acrylic laser cuts (This is only for dope looking purpose, this can be printed too)</li>
+                <li>Insert all the necessary bearings taking the CAD file as reference.</li>
+                <li>Insert an empy spool in the spool holder</li>
+                <li>Assemble the self reversing screw and attatch it to the bearing</li>
+                <li>Screw the motor nut onto the motor holder. Then Fit the appropriate gear onto the motor shaft.</li>
             </ol>
 
             <!-- Outcome Video -->
-            <h3>Outcome Video:</h3>
-            <iframe src="https://www.youtube.com/embed/sample-video-id" title="Grinder Outcome Video"></iframe>
+            <h3>Outcome Video:</h3> 
+            <div class="video-container">
+                <video class="dynamic-video" controls>
+                    <source src="images/3dprinting.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </section>
-
 
         <section id="controllHub" class="part-section">
             <h2>Control Hub</h2>
             <p class="desc"> This is the user interface through which users can set certain parameters.</p>
             
             <!-- Outcome Image -->
-            <img src="images/grinder_outcome.jpg" alt="Contro Hub Outcome Image">
-
+            <section id="spooler" class="part-section">
+            <div class="Views">
+                <img src="images/controllHub.jpg" alt="Shredder Outcome Image">
+                <img src="images/circuit.jpeg" alt="Shredder Outcome Image">
+            </div>
             <!-- Affiliate Links to Buy Parts -->
             <h3>Outlook</h3>
             <ul>
@@ -573,7 +674,7 @@
                     The larger the error, the larger the proportional response.</li>
                 <li>Integral (I): This term accounts for past errors. It integrates the error over time, ensuring
                     that any accumulated error is corrected by adjusting the process control inputs.</li>
-                <li>Derivative (D): This term predicts future errors based on the current rate of change. It
+                <li>    : This term predicts future errors based on the current rate of change. It
                     helps to dampen the system response and improve stability.</li>
             </ol>
                     
